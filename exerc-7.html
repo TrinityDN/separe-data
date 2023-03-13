@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Separe uma data/title>
+</head>
+<body>
+    <legend>Digite uma data:&nbsp;</legend>
+    <form>
+        <!--Digitação das idades separadas por vírgula-->
+        <input type="date" id="data" name="data"><br>
+        <!--Botão que fará a ação da contagem chamando a função-->
+        <input type="button" name="separar" value="Separar"onclick="separa()">
+    </form>
+    <!--Parágrafos-->
+    <p id="dia">DIA: </p>
+    <p id="mes">MÊS:</p>
+    <p id="ano">ANO:</p>
+
+    <script>
+        function separa(){
+            var data = document.getElementById("data").value;
+            data = data.split("-");
+            //exibe as respostas nos parágrafos
+            document.getElementById("dia").innerHTML = "DIA: "+ data[2];
+            document.getElementById("mes").innerHTML = "MÊS: " + data[1];
+            document.getElementById("ano").innerHTML = "ANO: " + data[0];
+        }
+    </script>
+</body>
+</html>
